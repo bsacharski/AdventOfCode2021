@@ -1,0 +1,27 @@
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Set up Actions
+        uses: actions/checkout@v2
+
+      - name: Set up Deno
+        uses: denoland/setup-deno@v1.0.0
+        with:
+          deno-version: v1.x
+
+      - name: Check formatting
+        run: deno fmt --check --config deno.jsonc
+
+      - name: Analyze code
+        run: deno lint --config deno.jsonc
+
+      - name: Run unit and integration tests
+        run: deno test -A --coverage=cov --doc
+
+      - name: Generate coverage report
+        run: deno coverage --lcov cov > cov.lcov
