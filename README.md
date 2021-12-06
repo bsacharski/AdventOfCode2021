@@ -7,3 +7,9 @@ Source code for answers to puzzles that were a part of [Advent of Code 2021](htt
 ```bash
 deno run DAY/main.ts
 ```
+
+## Running Deno's standard formatter
+
+```bash
+deno --config deno.jsonc fmt #add --check to just check
+```
