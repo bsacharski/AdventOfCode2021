@@ -13,3 +13,19 @@ export function print2DArray<Type>(input: Type[][]): void {
 
   console.log(output);
 }
+
+export function generate2DArray<Type>(
+  rows: number,
+  cols: number,
+  intialValue: Type,
+): Type[][] {
+  const output: Type[][] = [];
+  for (let currentRow = 0; currentRow < rows; currentRow++) {
+    output[currentRow] = [];
+    for (let currentCol = 0; currentCol < cols; currentCol++) {
+      output[currentRow][currentCol] = intialValue;
+    }
+  }
+
+  return output;
+}
