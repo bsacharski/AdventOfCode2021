@@ -1,0 +1,11 @@
+{
+  "include": [
+    "src/**/*.ts"
+  ],
+  "compilerOptions": {
+    "downlevelIteration": true,
+    "lib": ["ES2021", "dom"],
+    "outDir": "dist",
+    "sourceMap": true
+  }
+}
