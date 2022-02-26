@@ -1,2 +1,5 @@
+.idea/
 .vscode/
 cov/
+dist/
+node_modules/
